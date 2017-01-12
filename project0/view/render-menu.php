@@ -1,45 +1,34 @@
 <?php
 
-// open menu type
+// open menu 
+// each option div contains one type of pizza
 echo 
 "
-<div id='option'>
+		<div id='option'>
 ";
 
-// print option in big header
+// print type attribute of each options
 echo
 "
-	<h>{$option[@type]}</h>
+			<h1>{$option[@type]}</h1>
 ";
 
-// select all foods inside each option
-$foods_xml = $option->xpath('.//food[@name]');
+// select all attributes that are designated "name"
+$foods_xml = $option->xpath('.//@name');
 
-// open list
-echo 
-"
-<li>
-";
-
-// print each food in the option
+// print each food elements in each options as a list
 foreach($foods_xml as $food)
 {
+	// print "name" attributes of food elements
 	echo
 	"
-	<ul>{$food[@name]}</ul>
+				<div id='food'>{$food[@name]}</div>
 	";
 }
-
-// close list
-echo
-"
-</li>
-";
-
 
 // close div
 echo 
 "
-</div>
+		</div>
 ";
 ?>

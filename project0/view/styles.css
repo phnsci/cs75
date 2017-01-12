@@ -1,0 +1,47 @@
+body
+{
+	background-color: #ffffff;
+}
+
+
+#option 
+{	
+	width: 500px;
+	background-color: #9b9595;
+
+	border-style: solid;
+	border-color: #000000;
+	border-width: 0px;
+
+	font-size: 20px;
+
+	margin-left: auto;	
+	margin-right: auto;
+	margin-bottom: 30px;
+	padding: 0px;
+}
+
+h1 
+{
+	height: 60px;
+	background-color: #fc202f;
+	margin: 0px;
+
+	font-family: "Book Antiqua";
+	text-align: center;
+	vertical-align: middle;
+	line-height: 60px;
+}
+
+#food
+{
+	left-margin: 20px;
+	font-family: sans-serif;
+
+	border-style: solid;
+	border-color: black;
+	border-width: 0px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

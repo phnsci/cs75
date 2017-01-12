@@ -1,21 +1,15 @@
 <?php
 		$array_xml = $data['menu'];
 		
-
-		/*
-		echo "<pre>";
-		print_r($array_xml);
-		echo "</pre>";
-		*/
-
 		// get all menu dinner types
+		// select all option elements that are element
+		// of menu element
 		$option_xml = $array_xml[0]->xpath('.//option');
 
 
+		// render each options into separate div 
 		foreach($option_xml as $option)
 		{
-			//print $option["type"];
-
 			include('render-menu.php');	
 		}
 ?>

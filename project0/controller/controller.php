@@ -9,3 +9,5 @@ include(M . 'model.php');
 
 // render menu table in browser
 include (V . 'view.php');
+
+?>

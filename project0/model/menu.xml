@@ -77,14 +77,6 @@
 				<price>980</price>
 			</small>
 		</food>
-		<food name="Three Aces Special">
-			<large>
-				<price>1580</price>	
-			</large>
-			<small>
-				<price>980</price>
-			</small>
-		</food>
 	</option>
 
 	<!-- Special Dinners options -->

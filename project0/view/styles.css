@@ -62,12 +62,22 @@ h1
 	position: relative;
 }
 
-input[type="submit"]
+input[value="Go Back"]
 {
 	font-size: 20px;
 	font-family: message-box;
 
 	position: relative;
-	left: 470px;
+	left: 10px;
+	bottom: 5px;
+}
+
+input[value="Customize"]
+{
+	font-size: 20px;
+	font-family: message-box;
+
+	position: relative;
+	left: 490px;
 	bottom: 5px;
 }

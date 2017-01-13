@@ -1,38 +1,42 @@
 <?php
+		$array_xml = $data['menu'];
+		
+		// get all menu dinner types
+		// select all "option" elements that are c
+		// child element of "menu" element
+		$option_xml = $array_xml[0]->xpath('.//option');
 
-// open menu 
-// each option div contains one type of pizza
-echo 
-"
-		<div id='option'>
-";
+		$customize_form = 'entry.php';
 
-// print type attribute of each options
-echo
-"
-			<h1>{$option[@type]}</h1>
-";
+		// create a form 
+		echo
+		"
+		<form 
+		action='$customize_form'
+		method = 'post'>
+		";
 
-// select all attributes that are designated "name"
-$foods_xml = $option->xpath('.//food');
+		// render each options into separate div 
+		foreach($option_xml as $option)
+		{
+			include('render-option.php');	
+		}
 
-// print each food elements in each options as a list
-foreach($foods_xml as $food)
-{
-	// print "name" attributes of food elements
-	echo
-	"
-	<input type='checkbox' id='{$food[@name]}'
-	name='{$food[@name]}' class='food'/>
-	<label for='{$food[@name]}'>
-		{$food[@name]}
-	</label>
-	";
-}
+		// make two submit buttons
+		// "Go Back" button 
 
-// close div
-echo 
-"
-		</div>
-";
+		/*
+		echo 
+		"
+		<input type='submit' name='button' 
+		value='Go Back'>";
+		*/
+
+		// "Customize" button
+		echo
+		"
+		<input type='submit' name='button' 
+		value='Customize'>";
+	
+		echo "</form>";
 ?>

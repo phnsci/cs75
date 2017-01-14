@@ -1,44 +1,45 @@
+<?xml version="1.0"?>
 <menu>
 	<!-- Pizza options -->
-	<option type= "Pizzas">
+	<option type="Pizzas">
 		<food name="Tomato &amp; Cheese">
 			<large>
-				<price>975</price>	
+				<price id="0">975</price>	
 			</large>
 			<small>
-				<price>550</price>
+				<price id="1">550</price>
 			</small>
 		</food>
 		<food name="Onions">
 			<large>
-				<price>1085</price>	
+				<price id="2">1085</price>	
 			</large>
 			<small>
-				<price>685</price>
+				<price id="3">685</price>
 			</small>
 		</food>
 		<food name="Peppers">
 			<large>
-				<price>1085</price>	
+				<price id="4">1085</price>	
 			</large>
 			<small>
-				<price>685</price>
+				<price id="5">685</price>
 			</small>
 		</food>
 		<food name="Broccoli">
 			<large>
-				<price>1085</price>	
+				<price id="6">1085</price>	
 			</large>
 			<small>
-				<price>685</price>
+				<price id="7">685</price>
 			</small>
 		</food>
 		<food name="Fresh Garlic">
 			<large>
-				<price>1085</price>	
+				<price id="8">1085</price>	
 			</large>
 			<small>
-				<price>685</price>
+				<price id="9">685</price>
 			</small>
 		</food>
 		<extra>
@@ -55,26 +56,26 @@
 	<option type="Speciality Pizzas">
 		<food name="Three Aces Special">
 			<large>
-				<price>1580</price>	
+				<price id="10">1580</price>	
 			</large>
 			<small>
-				<price>980</price>
+				<price id="11">980</price>
 			</small>
 		</food>
 		<food name="Mediterranean Sliced Tomatoes, Olives, Spinach, Fresh Garlic, Mozzarella &amp; Feta Cheese">
 			<large>
-				<price>1580</price>	
+				<price id="12">1580</price>	
 			</large>
 			<small>
-				<price>980</price>
+				<price id="13">980</price>
 			</small>
 		</food>
 		<food name="Vegetarian ">
 			<large>
-				<price>1580</price>	
+				<price id="14">1580</price>	
 			</large>
 			<small>
-				<price>980</price>
+				<price id="15">980</price>
 			</small>
 		</food>
 	</option>
@@ -82,19 +83,19 @@
 	<!-- Special Dinners options -->
 	<option type="Special Dinner">
 		<food name="Chicken Wing Dinner">
-			<price>725</price>
+			<price id="16">725</price>
 		</food>
 		<food name="Gyro Plate">
-			<price>725</price>
+			<price id="17">725</price>
 		</food>
 		<food name="Chicken Plate">
-			<price>725</price>
+			<price id="18">725</price>
 		</food>
 		<food name="3 Piece Chicken Plate">
-			<price>725</price>
+			<price id="19">725</price>
 		</food>
 		<food name="Double-cheeseburger Plate">
-			<price>725</price>
+			<price id="20">725</price>
 		</food>
 	</option>
 
@@ -102,30 +103,30 @@
 	<option type="Side Orders">
 		<food name="Onion Rings">
 			<large>
-				<price>295</price>
+				<price id="21">295</price>
 			</large>
 			<small>
-				<price>260</price>
+				<price id="22">260</price>
 			</small>
 		</food>
 		<food name="French Fries">
 			<large>
-				<price>265</price>
+				<price id="23">265</price>
 			</large>
 			<small>
-				<price>225</price>
+				<price id="24">225</price>
 			</small>
 		</food>
 		<food name="Spicy Fries">
 			<large>
-				<price>295</price>
+				<price id="25">295</price>
 			</large>
 			<small>
-				<price>260</price>
+				<price id="26">260</price>
 			</small>
 		</food>
 		<food name="Chicken Wings">
-			<price>575</price>
+			<price id="27">575</price>
 		</food>
 	</option>
 </menu>

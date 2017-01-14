@@ -42,7 +42,7 @@ for ($i = 0; $i < count($option_xml); $i++)
 		if (isset($option_xml[$i]->food[$j]->price))
 		{
 			// assign index directly to price
-			$option_xml[$i]->food[$j]
+			$option_xml[$i]->food[$j]->price
 				['id'] = $index++;
 		}
 		// assign id to price of <large> and <small>

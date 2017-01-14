@@ -27,6 +27,7 @@ $price_xml = $menu_xml->xpath('.//price');
 // create an unique index and assign for each <price>
 $index = 0;
 
+/* THE FOR LOOP WILL GIVE EACH <price> TAG AN ID */
 // going into individual <option>
 for ($i = 0; $i < count($option_xml); $i++)
 {
@@ -55,11 +56,8 @@ for ($i = 0; $i < count($option_xml); $i++)
 	}
 }
 
-
 // function to save menu_xml to a file named menu.xml
 $menu_xml->asXML(M.'menu.xml');
-
-
 
 // if user click any submit button
 if (isset($_POST['button']))

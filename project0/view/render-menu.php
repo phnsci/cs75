@@ -1,42 +1,37 @@
 <?php
-		$array_xml = $data['menu'];
-		
-		// get all menu dinner types
-		// select all "option" elements that are c
-		// child element of "menu" element
-		$option_xml = $array_xml[0]->xpath('.//option');
+	// get all menu dinner types
+	// select all "option" elements that are c
+	// child element of "menu" element
+	$option_xml = $array_xml->xpath('.//option');
 
-		$customize_form = 'entry.php';
+	/*
+	foreach($option_xml as $opt)
+	{
+		echo $opt[@type] . '<br>';
+	}
+	*/
 
-		// create a form 
-		echo
-		"
-		<form 
-		action='$customize_form'
-		method = 'post'>
-		";
+	//echo $option_xml[0][2][@name];
 
-		// render each options into separate div 
-		foreach($option_xml as $option)
-		{
-			include('render-option.php');	
-		}
+	// create a form 
+	echo
+	"
+	<form 
+	action='entry.php'
+	method = 'post'>
+	";
 
-		// make two submit buttons
-		// "Go Back" button 
+	// render each options into separate div 
+	foreach($option_xml as $option)
+	{
+		include(realpath(dirname(__FILE__) .
+					'/render-food.php'));	
+	}
 
-		/*
-		echo 
-		"
-		<input type='submit' name='button' 
-		value='Go Back'>";
-		*/
-
-		// "Customize" button
-		echo
-		"
-		<input type='submit' name='button' 
-		value='Customize'>";
-	
-		echo "</form>";
+	// "Customize" button
+	echo " 
+	<input type='submit' name='button' 
+	value='Customize'>
+	";
+	echo "</form>";
 ?>

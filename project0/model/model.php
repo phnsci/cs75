@@ -12,8 +12,3 @@ foreach($data as $key => $path)
 {
 	$data["$key"] = $xml->xpath($path);
 }
-
-// printout for testing
-//echo "<prev>";
-//print_r($data);
-//echo "</prev>";

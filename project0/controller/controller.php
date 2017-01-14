@@ -15,6 +15,30 @@ $data = array('menu' => '/menu');
 // the data will be filled in the model
 include(M . 'model.php');
 
+// store xml data in array_xml
+$array_xml = $data['menu'][0];
+
+// get all <price> tag elements
+$price_xml = $array_xml->xpath('.//price');
+
+// create an unique index and assign for each <price>
+$index = 0;
+
+foreach($price_xml as $price)
+{
+	$price->addAttribute('id',  $index);
+	$index++;
+}
+
+$data['menu'][0]->saveXML();
+
+echo "<pre>";
+//print_r($data['menu'][0]);
+print_r($array_xml);
+print_r($price_xml);
+echo "</pre>";
+
+
 // if user click any submit button
 if (isset($_POST['button']))
 {

@@ -9,7 +9,7 @@ echo
 ";
 
 // render page header
-include ('header.php');
+include (realpath(dirname(__FILE__).'/header.php'));
 
 echo 
 "
@@ -17,29 +17,33 @@ echo
 	<body>
 ";
 
-// render  top bar
+// render top bar
 include ('topbar.php');
 
 
 if ($data['page'] == '1')
 {
 	// render menu
-	include ('render-menu.php');
+	include (realpath(dirname(__FILE__)
+				.'/render-menu.php'));
 }
 elseif ($data['page'] == '2')
 {
 	// render customize page 
-	include ('render-customize.php');
+	include (realpath(dirname(__FILE__)
+				.'/render-customize.php'));
 }
 elseif ($data['page'] == '3')
 {
 	// render confirmation page after customize
-	include ('render-confirm.php');
+	include (realpath(dirname(__FILE__)
+				.'/render-confirm.php'));
 }
 else if ($data['page'] == '4')
 {
 	// render submission page
-	include('render-submit.php');
+	include (realpath(dirname(__FILE__)
+				.'/render-submit.php'));
 }
 
 echo

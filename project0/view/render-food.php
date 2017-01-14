@@ -23,10 +23,11 @@ foreach($foods_xml as $food)
 	echo
 	"
 	<input type='checkbox' id='{$food[@name]}'
-	name='{$food[@name]}' class='food'/>
+	value='{$food[@name]}' name='food[]'/>
 	<label for='{$food[@name]}'>
 		{$food[@name]}
 	</label>
+	<br>
 	";
 }
 

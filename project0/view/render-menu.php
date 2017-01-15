@@ -11,10 +11,10 @@
 	foreach($option_xml as $option)
 	{
 		include(realpath(dirname(__FILE__) .
-					'/render-food.php'));	
+					'/menu-food.php'));	
 	}
 
-	// "Customize" button
+	// [Customize] submit button
 	echo " 
 	<input type='submit' name='button' 
 	value='Customize'>

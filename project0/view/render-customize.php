@@ -1,8 +1,26 @@
 <?php
-	$post_food = $_POST['food'];
+	echo 
+	"
+	<form
+	action = 'entry.php'
+	method = 'post'>
+	";
+	
+	foreach($_POST['food'] as $order)
+	{
+		include (realpath(dirname(__FILE__)
+					.'/customize-order.php'));
+	}
+	
+	// [Go Back] button
+	echo "
+	<input type='submit' name='button'
+	value='Go Back'>
+	";
 
-	echo "<pre>";
-	print_r($post_food);
-	echo "</pre>";
-
+	// [Confirm] button
+	echo "
+	<input type='submit' name='button'
+	value='Submit'>
+	";
 ?>

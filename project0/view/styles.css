@@ -36,7 +36,7 @@ form
 
 h1 
 {
-	height: 60px;
+	/*height: 60px;*/
 	background-color: #fc202f;
 	margin: 0px;
 
@@ -46,19 +46,19 @@ h1
 	line-height: 60px;
 }
 
-input[name='food']
+#atom
 {
 	left-margin: 20px;
 	font-family: sans-serif;
 
 	border-style: solid;
 	border-color: black;
-	border-width: 1px;
+	border-width: 0px;
 	padding-left: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 
-	display: inline-block;
+	display: block;
 }
 
 input[value="Go Back"]
@@ -78,5 +78,16 @@ input[value="Customize"]
 
 	position: relative;
 	left: 490px;
+	bottom: 5px;
+}
+
+
+input[value="Submit"]
+{
+	font-size: 20px;
+	font-family: message-box;
+
+	position: relative;
+	left: 320px;
 	bottom: 5px;
 }

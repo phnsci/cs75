@@ -20,7 +20,6 @@ echo
 // render top bar
 include ('topbar.php');
 
-
 if ($data['page'] == '1')
 {
 	// render menu

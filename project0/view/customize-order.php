@@ -12,7 +12,7 @@ echo "
 
 echo "	
 <div id='atom'>
-Numbers  <input type='text' name='num' size='3'
+Numbers  <input type='text' size='3'
 		  autocomplete='off' maxlength='3'
 		  name=\"orders['$order']['num']\"/>
 </div>

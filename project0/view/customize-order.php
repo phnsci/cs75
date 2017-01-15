@@ -51,4 +51,6 @@ if (isset($order_xml[0]->xpath('..')[0]->extra))
 	</div>
 	";
 }
+
+echo "</div>";
 ?>

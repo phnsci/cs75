@@ -13,7 +13,8 @@ echo "
 echo "	
 <div id='atom'>
 Numbers  <input type='text' name='num' size='3'
-		  autocomplete='off' maxlength='3'/>
+		  autocomplete='off' maxlength='3'
+		  name=\"orders['$order']['num']\"/>
 </div>
 ";
 
@@ -27,8 +28,8 @@ if (isset($order_xml[0]->large))
 {
 	echo "
 	<div id='atom'>
-	Choose Size
-	<select>
+	Size
+	<select name=\"orders['$order']['size']\">
 		<option value='large'>Large</option>
 		<option value='small'>Small</option>
 	</select>
@@ -42,8 +43,8 @@ if (isset($order_xml[0]->xpath('..')[0]->extra))
 {
 	echo "
 	<div id='atom'>
-	Choose extra cheese
-	<select>
+	Cheese Size
+	<select name=\"orders['$order']['cheese']\">
 		<option value='none'>None</option>
 		<option value='large'>Large</option>
 		<option value='Small'>Small</option>

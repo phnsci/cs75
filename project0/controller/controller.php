@@ -15,6 +15,13 @@ $page_to_serve = 1;
 // data
 $data = array();
 
+if (isset($_POST))
+{
+	echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";
+}
+
 // the data will be filled in the model
 include(M . 'model.php');
 

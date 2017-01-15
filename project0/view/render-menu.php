@@ -1,4 +1,13 @@
 <?php
+
+	if ($warning == true)
+	{
+		echo "
+		<h>You need to choose at least one option</h>
+		";
+	}
+
+	$warning = false;
 	// create a form 
 	echo
 	"

@@ -68,6 +68,9 @@ for ($i = 0; $i < count($option_xml); $i++)
 // function to save menu_xml to a file named menu.xml
 $menu_xml->asXML(M.'menu.xml');
 
+// warning happen when user doesn't chooose any option
+$warning = false;
+
 // if user click any submit button
 if (isset($_POST['button']))
 {
@@ -80,7 +83,17 @@ if (isset($_POST['button']))
 	}
 	elseif($submitbutton == 'Customize')
 	{
-		$page_to_serve = 2;
+		// turn on wanring if user forget to choose
+		if (empty($_POST['food']))
+		{
+			$warning = true;
+			$page_to_serve = 1;
+		}
+		// else continue to customize page
+		else
+		{
+			$page_to_serve = 2;
+		}
 	}
 	elseif ($submitbutton == 'Submit')
 	{

@@ -3,7 +3,12 @@
 	if ($warning == true)
 	{
 		echo "
-		<h>You need to choose at least one option</h>
+		<p style='color:red; font-size:20px; 
+		text-align: center;'>
+		<b>
+		***You need to choose at least one option***
+		</b>
+		</p>
 		";
 	}
 

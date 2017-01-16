@@ -81,7 +81,6 @@ input[value="Customize"]
 	bottom: 5px;
 }
 
-
 input[value="Submit"]
 {
 	font-size: 20px;
@@ -89,5 +88,15 @@ input[value="Submit"]
 
 	position: relative;
 	left: 430px;
+	bottom: 5px;
+}
+
+input[value="Confirm"]
+{
+	font-size: 20px;
+	font-family: message-box;
+
+	position: relative;
+	left: 420px;
 	bottom: 5px;
 }

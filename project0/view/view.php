@@ -20,25 +20,25 @@ echo
 // render top bar
 include ('topbar.php');
 
-if ($data['page'] == '1')
+if ($_SESSION['page'] == '1')
 {
 	// render menu
 	include (realpath(dirname(__FILE__)
 				.'/render-menu.php'));
 }
-elseif ($data['page'] == '2')
+elseif ($_SESSION['page'] == '2')
 {
 	// render customize page 
 	include (realpath(dirname(__FILE__)
 				.'/render-customize.php'));
 }
-elseif ($data['page'] == '3')
+elseif ($_SESSION['page'] == '3')
 {
 	// render confirmation page after customize
 	include (realpath(dirname(__FILE__)
 				.'/render-confirm.php'));
 }
-else if ($data['page'] == '4')
+else if ($_SESSION['page'] == '4')
 {
 	// render submission page
 	include (realpath(dirname(__FILE__)

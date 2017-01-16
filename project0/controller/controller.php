@@ -1,4 +1,7 @@
 <?php
+// start the session
+session_start();
+
 // there are four pages to serve
 // 1. menu page 
 // 2. customize page
@@ -7,7 +10,10 @@
 
 // at the beginning, the page to serve is 1, which is
 // the menu
-$page_to_serve = 1;
+if (isset($_SESSION['page']))
+	$page_to_serve = $_SESSION['page'];
+else
+	$page_to_serve = 1;
 
 // create a array that stores all the information
 // that we want to query from the database: menu.xml
@@ -15,17 +21,8 @@ $page_to_serve = 1;
 // data
 $data = array();
 
-if (isset($_POST))
-{
-	echo "<pre>";
-	print_r($_POST);
-	echo "</pre>";
-}
-
 // the data will be filled in the model
 include(M . 'model.php');
-
-$data['page'] = 1;
 
 // get all <option> tag elements
 $option_xml = $menu_xml->option;
@@ -68,7 +65,8 @@ for ($i = 0; $i < count($option_xml); $i++)
 // function to save menu_xml to a file named menu.xml
 $menu_xml->asXML(M.'menu.xml');
 
-// warning happen when user doesn't chooose any option
+// warning flag when user doesn't chooose any option
+// in "menu page"
 $warning = false;
 
 // if user click any submit button
@@ -77,9 +75,10 @@ if (isset($_POST['button']))
 	$submitbutton = $_POST['button'];
 
 	// change page to serve based on submit button
-	if ($submitbutton == 'Go Back')
+	if ($submitbutton == 'Go Back' && 
+			$page_to_serve > 1)
 	{
-		$page_to_serve = 1;
+		$page_to_serve--;
 	}
 	elseif($submitbutton == 'Customize')
 	{
@@ -106,7 +105,27 @@ if (isset($_POST['button']))
 	}
 }
 
-$data['page'] = $page_to_serve;
+$_SESSION['page'] = $page_to_serve;
+
+// process user order -> confirmation page
+if (isset($_POST['orders']))
+{
+	echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";
+
+	/*
+	foreach($_POST['orders'] as $name => $arr)
+	{
+		// find order data in xml file
+		$order_xml = $menu_xml->
+			xpath(".//food[@name=$name]");
+		echo "<pre>";
+		print_r($arr);
+		echo "</pre>";
+	}
+	*/
+}
 
 // render menu table in browser
 include (V . 'view.php');

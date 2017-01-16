@@ -34,4 +34,5 @@ foreach($foods_xml as $food)
 
 // close div
 echo "</div>";
+
 ?>

@@ -7,14 +7,14 @@ echo
 
 // print user ordered option
 echo "	
-<h1>$order</h1>
+<h1>{$order['name']}</h1>
 ";
 
 echo "	
 <div id='atom'>
 Numbers  <input type='text' size='3'
 		  autocomplete='off' maxlength='3'
-		  name=\"orders['$order']['num']\"/>
+		  name=\"orders['$order[\'name\']']['num']\"/>
 </div>
 ";
 

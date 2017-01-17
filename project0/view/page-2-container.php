@@ -15,8 +15,10 @@ if (isset($_POST['food']))
 	// copy inputs from $_POST to $_SESSION['temp']
 	foreach($_POST['food'] as $order)
 	{
-		$_SESSION['temp'][$index++] = $order;
+		$_SESSION['temp'][$index++]['name'] = $order;
 	}
+
+	$order_limit = $index;
 
 	// clear any possible data in $_SESSION['temp']
 	while (isset($_SESSION['temp'][$index]))
@@ -25,10 +27,20 @@ if (isset($_POST['food']))
 	}
 }
 
-foreach($_SESSION['temp'] as $order)
+echo $order_limit;
+
+// retrieve user order from $_SESSION
+for($index = 0; $index < $order_limit; $index++)
 {
+	echo "<pre>";
+	print_r($_SESSION['temp'][$index]);
+	echo "</pre>";
+
+	$order = $_SESSION['temp'][$index];
+
 	include (realpath(dirname(__FILE__)
 				.'/customize-order.php'));
+	$index++;
 }
 
 // [Go Back] button

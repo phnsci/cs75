@@ -24,25 +24,25 @@ if ($_SESSION['page'] == '1')
 {
 	// render menu
 	include (realpath(dirname(__FILE__)
-				.'/render-menu.php'));
+				.'/page-1-container.php'));
 }
 elseif ($_SESSION['page'] == '2')
 {
 	// render customize page 
 	include (realpath(dirname(__FILE__)
-				.'/render-customize.php'));
+				.'/page-2-container.php'));
 }
 elseif ($_SESSION['page'] == '3')
 {
 	// render confirmation page after customize
 	include (realpath(dirname(__FILE__)
-				.'/render-confirm.php'));
+				.'/page-3-container.php'));
 }
 else if ($_SESSION['page'] == '4')
 {
 	// render submission page
 	include (realpath(dirname(__FILE__)
-				.'/render-submit.php'));
+				.'/page-4-container.php'));
 }
 
 echo

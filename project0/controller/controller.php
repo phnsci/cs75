@@ -105,26 +105,84 @@ if (isset($_POST['button']))
 	}
 }
 
+// store page to serve in SESSION
 $_SESSION['page'] = $page_to_serve;
 
-// process user order -> confirmation page
-if (isset($_POST['orders']))
-{
-	echo "<pre>";
-	print_r($_POST);
-	echo "</pre>";
 
-	/*
+/* 			   PRINT FOODS IN [MENU PAGE] 		  */
+if ($page_to_serve == 1)
+{
+	// search number of types in xml file
+	$types_xml = $menu_xml->xpath('.//option');
+
+	$i = 0;
+
+	foreach($types_xml as $type_xml)
+	{
+		$j = 0;
+		$menu[$i][$j] = $type_xml[@type];
+
+		$foods_xml = $type_xml->xpath('./food');
+		
+		foreach($foods_xml as $food_xml)
+		{
+			$j++;
+			$menu[$i][$j] = $food_xml[@name];
+		}
+
+		$i++;
+	}
+}
+
+unset($i);
+unset($j);
+
+/* 	  PROCESS USER ORDER IN [CONFIRMATION PAGE]   */
+if (isset($_POST['orders']) && $page_to_serve == 3)
+{
+	$index = 0;	
 	foreach($_POST['orders'] as $name => $arr)
 	{
-		// find order data in xml file
+		// find ordered food info in xml file
 		$order_xml = $menu_xml->
 			xpath(".//food[@name=$name]");
+
 		echo "<pre>";
-		print_r($arr);
-		echo "</pre>";
+		print_r($order_xml);
+		print"</pre>";
+
+		$_SESSION['temp'][$index]['name'] = $name;
+		
+		// if the order has size
+		if (isset($arr['size']))
+		{	
+			$size = $arr['size'];
+			$_SESSION['temp'][$index]['size'] = $size;
+			$price = $order_xml[0]->{$size}->price;	
+		}
+
+		// if the order has cheese
+		if (isset($arr['cheese']))
+		{
+			$cheese = $arr['cheese'];
+			$_SESSION['temp'][$index]['cheese'] = 
+				$cheese;
+			$cheese_price = 
+					$order_xml[0]->xpath('..')[0]
+					->extra->$cheese;
+
+			$price += $cheese_price;
+		}
+
+		$num = $arr['num'];
+		$_SESSION['temp'][$index]['num'] = $num;
+
+		$price *= $num;
+		$_SESSION['temp'][$index]['price'] = $price;
+
+		// increment index
+		$index++;
 	}
-	*/
 }
 
 // render menu table in browser
